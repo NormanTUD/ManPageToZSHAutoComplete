@@ -14,7 +14,7 @@ my @man = qx(man $manpage);
 my $started_description = 0;
 my $last_spaces = ' ' x 1000;
 my $last_arg_name = '';
-my $param_re = qr/(?:--?[a-zA-Z0-9=_]+(?:$|, --?[a-zA-Z0-9=_]+)*)/;
+my $param_re = qr/(?:--?[a-zA-Z0-9=_:<>]+(?:$|, --?[a-zA-Z0-9=_]+)*)/;
 foreach my $line (@man) {
 	if($started_description) {
 		if($line =~ m#^(?<spaces>\s*)(.*)#) {
